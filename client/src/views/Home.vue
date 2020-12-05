@@ -2,7 +2,7 @@
   <div class="home">
     <div class="mod-wrapper">
       <File
-        v-for="item of 101"
+        v-for="item of 0"
         :key="item"
         @click.native="onClickFile(item)"
       />

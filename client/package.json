@@ -12,10 +12,10 @@
     "@types/nprogress": "^0.2.0",
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
-    "element-plus": "^1.0.1-beta.2",
+    "element-plus": "^1.0.1-beta.3",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
-    "vue": "^3.0.3",
+    "vue": "^3.0.4",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"

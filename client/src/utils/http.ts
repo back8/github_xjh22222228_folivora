@@ -1,8 +1,15 @@
 import axios from 'axios'
 import NProgress from 'nprogress'
+import { ElNotification } from 'element-plus'
 
 const instance = axios.create()
 instance.defaults.baseURL = '/api'
+
+interface RespData {
+  status: number
+  message?: string
+  data?: any
+}
 
 instance.interceptors.request.use(config => {
   NProgress.start()
@@ -13,10 +20,22 @@ instance.interceptors.request.use(config => {
   return Promise.reject(error)
 })
 
-instance.interceptors.response.use(response => {
+instance.interceptors.response.use(resp => {
   NProgress.done()
+
+  const status: number = resp.status
+
+  const data: RespData = resp.data
+
+  if (status !== 200) {
+    ElNotification({
+      type: 'error',
+      title: '',
+      message: ''
+    })
+  }
   
-  return response
+  return resp
 }, error => {
   NProgress.done()
   return Promise.reject(error)
